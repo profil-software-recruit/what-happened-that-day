@@ -1,0 +1,62 @@
+[
+  {
+    "model": "myproject_api.date",
+    "pk": 1,
+    "fields": {
+      "month": 7,
+      "month_name": "July",
+      "day": 14,
+      "fact": "7th month 14th day test-fact."
+    }
+  },
+  {
+    "model": "myproject_api.date",
+    "pk": 2,
+    "fields": {
+      "month": 11,
+      "month_name": "November",
+      "day": 22,
+      "fact": "11th month 22th day test-fact."
+    }
+  },
+  {
+    "model": "myproject_api.date",
+    "pk": 3,
+    "fields": {
+      "month": 7,
+      "month_name": "July",
+      "day": 14,
+      "fact": "7th month 14th day test-fact."
+    }
+  },
+  {
+    "model": "myproject_api.date",
+    "pk": 4,
+    "fields": {
+      "month": 5,
+      "month_name": "May",
+      "day": 10,
+      "fact": "5th month 10th day test-fact."
+    }
+  },
+  {
+    "model": "myproject_api.date",
+    "pk": 5,
+    "fields": {
+      "month": 7,
+      "month_name": "July",
+      "day": 14,
+      "fact": "7th month 14th day test-fact."
+    }
+  },
+  {
+    "model": "myproject_api.date",
+    "pk": 6,
+    "fields": {
+      "month": 11,
+      "month_name": "November",
+      "day": 22,
+      "fact": "11th month 22th day test-fact."
+    }
+  }
+]

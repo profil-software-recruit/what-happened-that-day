@@ -1,0 +1,40 @@
+version: '3.9'
+
+services:
+  db:
+    image: postgres:14.5-alpine3.16
+    profiles: [ "dev", "test" ]
+    ports:
+      - "${POSTGRES_PORT}:5432"
+    volumes:
+      - postgres-data:/var/lib/postgresql/data/
+    env_file:
+      - .env
+  api:
+    build: .
+    profiles: [ "dev" ]
+    command: >
+      sh -c "sleep 3 &&
+             python manage.py migrate --settings=myproject.settings_local &&
+             python manage.py runserver 0.0.0.0:8000 --settings=myproject.settings_local"
+    ports:
+      - "${API_PORT}:8000"
+    env_file:
+      - .env
+    depends_on:
+      - db
+  tests:
+    build: .
+    profiles: [ "test" ]
+    command: >
+      sh -c "sleep 5 &&
+             python manage.py test --settings=myproject.settings_local -v ${TESTS_VERBOSITY_LVL}"
+    ports:
+      - "${TESTS_PORT}:8000"
+    env_file:
+      - .env
+    depends_on:
+      - db
+
+volumes:
+  postgres-data:
